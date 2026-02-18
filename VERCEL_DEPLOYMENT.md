@@ -1,22 +1,4 @@
-# Vercel Deployment Guide
 
-## Fix for "Unexpected token '<'" Error
-
-This error occurs when Vercel routes static files (JS/CSS) to `index.html` instead of serving them directly.
-
-## Solution 1: Updated vercel.json (Already Applied)
-
-The `vercel.json` file has been updated with proper routing. However, you also need to:
-
-### Step 1: Set Environment Variables in Vercel
-
-1. Go to your Vercel project dashboard
-2. Navigate to **Settings** → **Environment Variables**
-3. Add these two variables:
-   - `REACT_APP_VAPI_ASSISTANT_ID` = `4e33fffe-7a27-4a4e-a4f6-cae8ad6668eb`
-   - `REACT_APP_VAPI_API_KEY` = `8aff7b94-0a49-4909-8831-69876a7f7e24`
-4. Make sure to select **Production**, **Preview**, and **Development** environments
-5. Click **Save**
 
 ### Step 2: Redeploy
 
