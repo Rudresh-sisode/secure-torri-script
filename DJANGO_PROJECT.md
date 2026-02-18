@@ -146,8 +146,8 @@ cp .env.example .env
 Open the `.env` file and add your Vapi credentials:
 
 ```env
-VAPI_ASSISTANT_ID=4e33fffe-7a27-4a4e-a4f6-cae8ad6668eb
-VAPI_API_KEY=8aff7b94-0a49-4909-8831-69876a7f7e24
+VAPI_ASSISTANT_ID=<Assistant ID>
+VAPI_API_KEY=<API KEY>
 ```
 
 **Important Notes:**

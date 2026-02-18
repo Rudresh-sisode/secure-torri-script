@@ -107,8 +107,8 @@ cp .env.example .env
 Open the `.env` file and add your Vapi credentials:
 
 ```env
-REACT_APP_VAPI_ASSISTANT_ID=4e33fffe-7a27-4a4e-a4f6-cae8ad6668eb
-REACT_APP_VAPI_API_KEY=8aff7b94-0a49-4909-8831-69876a7f7e24
+REACT_APP_VAPI_ASSISTANT_ID=<Assitant ID>
+REACT_APP_VAPI_API_KEY=<API Key>
 ```
 
 **Important Notes:**
