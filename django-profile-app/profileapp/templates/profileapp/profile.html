@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <title>Profile App - Django</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="app">
+        <div class="profile-container">
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <img 
+                            src="https://via.placeholder.com/150" 
+                            alt="Profile Avatar" 
+                            class="avatar-img"
+                        />
+                    </div>
+                    <h1 class="profile-name">John Doe</h1>
+                    <p class="profile-title">Software Developer</p>
+                </div>
+                
+                <div class="profile-body">
+                    <div class="profile-section">
+                        <h2>About</h2>
+                        <p>
+                            Passionate software developer with expertise in React, Node.js, and modern web technologies. 
+                            Always learning and building innovative solutions.
+                        </p>
+                    </div>
+                    
+                    <div class="profile-section">
+                        <h2>Contact</h2>
+                        <div class="contact-info">
+                            <p><strong>Email:</strong> john.doe@example.com</p>
+                            <p><strong>Location:</strong> San Francisco, CA</p>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-section">
+                        <h2>Skills</h2>
+                        <div class="skills-list">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Django</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">HTML/CSS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vapi SDK Script -->
+    <script>
+        var vapiInstance = null;
+        const assistant = "{{ vapi_assistant_id }}"; 
+        // Assistant ID from environment variable
+        const apiKey = "{{ vapi_api_key }}"; 
+        // API Key from environment variable
+        const buttonConfig = {}; // Modify this as required
+        
+        (function (d, t) {
+            var g = document.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+            g.src =
+            "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js";
+            g.defer = true;
+            g.async = true;
+            s.parentNode.insertBefore(g, s);
+            g.onload = function () {
+                if (assistant && apiKey) {
+                    vapiInstance = window.vapiSDK.run({
+                        apiKey: apiKey, // mandatory
+                        assistant: assistant, // mandatory
+                        config: buttonConfig, // optional
+                    });
+                } else {
+                    console.error('Vapi Assistant ID or API Key is missing. Please check your .env file.');
+                }
+            };
+        })(document, "script");
+    </script>
+</body>
+</html>
